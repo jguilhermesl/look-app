@@ -11,8 +11,8 @@ export const HeaderComponent = styled.View`
 	justify-content: center;
 	border-bottom-width: 1px;
 	border-bottom-style: solid ;
-	border-bottom-color: rgba(0,0,0,0.1);
-	padding: 0 20px;
+	border-bottom-color: rgba(0,0,0,0.05);
+	padding: 0px 20px;
 `
 
 export const Touchable = styled.TouchableOpacity`

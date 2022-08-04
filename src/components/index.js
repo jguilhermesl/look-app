@@ -22,6 +22,8 @@ export const Box = styled.View `
 	gap: ${(props) => props.gap || "10px"};
 	border-bottom: ${(props) => props.borderBottom || 0};
 	position: ${ (props) => (props.position || "relative")};
+	margin-top: ${(props) => props.mt || 0};
+	margin-bottom: ${(props) => props.mb || 0};
 `;
 
 export const Touchable = styled.TouchableOpacity `
@@ -58,6 +60,8 @@ export const Title = styled.Text `
 	text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+	margin-top: ${(props) => props.mt || 0};
+	margin-bottom: ${(props) => props.mb || 0};
 `;
 
 export const Button = styled.TouchableOpacity `
@@ -119,6 +123,8 @@ export const Text = styled.Text.attrs((props) => ({
       : "0px"};
 	position: ${ (props) => (props.position || "relative")};
 	word-wrap: break-word;
+	margin-top: ${(props) => props.mt || 0};
+	margin-bottom: ${(props) => props.mb || 0};
 `
 
 export const ScrollView = styled.ScrollView.attrs({

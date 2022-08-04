@@ -23,9 +23,9 @@ export function Header({ title, actionRight, actionLeft, iconRight = null, iconL
 
 	function handleTouchableLeft() {
 		if(actionLeft === "goBack") {
-			navigation.goBack()
+			navigation.goBack();
 		} else {
-			navigation.openDrawer()
+			navigation.openDrawer();
 		}
 	}
 
