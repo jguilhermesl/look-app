@@ -6,14 +6,16 @@ import SignIn from "./pages/SignIn";
 import SignUp from "./pages/SignUp";
 import Feed from "./pages/Feed";
 import Marketplace from "./pages/Marketplace";
-import { Category } from "./pages/Marketplace/components/category";
 import Cart from "./pages/Cart";
+import Congratulations from "./pages/Congratulations";
+import { Category } from "./pages/Marketplace/components/category";
 import { Product } from "./pages/Marketplace/components/product";
 
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from "@react-navigation/drawer";
 import { Title } from "./components";
+import { Orders } from "./pages/Orders";
 
 const Stack = createStackNavigator();
 const Drawer = createDrawerNavigator();
@@ -43,7 +45,7 @@ function DrawerComponent (){
 			>
 			<Drawer.Screen name="Feed" component={Feed} />
 			<Drawer.Screen name="Marketplace" component={Marketplace} />
-			<Drawer.Screen name="Orders" component={Feed} />
+			<Drawer.Screen name="Orders" component={Orders} />
 		</Drawer.Navigator>
 	)
 }
@@ -107,6 +109,13 @@ export default function Routes() {
           }}
           name="Cart"
           component={Cart}
+        />
+        <Stack.Screen
+          options={{
+            headerShown: false,
+          }}
+          name="Congratulations"
+          component={Congratulations}
         />
       </Stack.Navigator>
     </NavigationContainer>

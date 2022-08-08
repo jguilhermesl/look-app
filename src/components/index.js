@@ -94,7 +94,7 @@ export const Input = styled.TextInput.attrs({
 	padding: 15px 15px;
 	font-size: 14px;
 	border-radius: 5px;
-	background: ${colors.light};
+	background: ${(props) => colors[props.background] || "transparent" };
 	border: 1px solid ${colors.muted};
 	color: ${colors.dark};
 	margin-top: ${(props) => props.mt || 0};
@@ -108,6 +108,7 @@ export const Text = styled.Text.attrs((props) => ({
 `
   color: ${(props) => colors[props.color || "muted"]};
   letter-spacing: -0.6px;
+	width: ${(props) => (props.fluid ? "100%" : props.width || "auto")};
   font-size: ${(props) => fonts.text.sizes[props.variant || "normal"]};
   font-weight: ${(props) => fonts.weight[props.fontWeight] || 500};
   margin: ${(props) => props.spacing || 0};

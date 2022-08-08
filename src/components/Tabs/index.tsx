@@ -10,15 +10,14 @@ interface TabProps {
 
 interface TabsProps {
 	data: TabProps[],
-	changeTab: (tab: TabProps) => void;
+	changeTab: (tab: TabProps) => void,
+	tabActive: TabProps
 }
 
-export function Tabs({ data, changeTab }: TabsProps) {
-	const [tabActive, setTabActive] = useState(data[0].value)
+export function Tabs({ data, changeTab, tabActive }: TabsProps) {
 	const totalTabs = data?.length
 
 	function handleClickOnButtonSelectTab(tab: TabProps) {
-		setTabActive(tab.value)
 		changeTab(tab)
 	}
 
@@ -28,8 +27,8 @@ export function Tabs({ data, changeTab }: TabsProps) {
 				<ButtonSelectTab onPress={() => handleClickOnButtonSelectTab(tab)} style={{ 
 					minWidth: `${ 100 / totalTabs}%`,
 					alignItems: "center"
-				}} isActive={tabActive === tab.value ? true : false}>
-					<Text color={tabActive === tab.value ? "primary" : "gray50"} style={{
+				}} isActive={tabActive.value === tab.value ? true : false}>
+					<Text color={tabActive.value === tab.value ? "primary" : "gray50"} style={{
 						borderBottomWidth: 3,
 						borderBottomStyle: "solid",
 						borderBottomColor: "red"
